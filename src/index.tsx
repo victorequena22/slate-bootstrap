@@ -1,6 +1,6 @@
 import { EditModal } from './Modal'
 import { AlingMenu, ListMenu, TabsMenu, TypeMenu } from './BlockProps'
-import { BlockElement, defaultBlock, getText, setText } from './Data'
+import { BlockElement, defaultBlock, getText, setText, Child, t, t1, t2, t3 } from './Data'
 import { Element } from './Element'
 import { Leaf } from './Mark'
 import { ColorButton, BackButton, FontSize, FontsFamily, toggleMark, FontStyle, MarkMenu } from './MarkProps'
@@ -9,6 +9,11 @@ import { VerElement, VerLeaf } from './Ver'
 import { Props, Texto, TextToHTML } from './Main'
 export type { BlockElement, Props as slateProps }
 export {
+  Child,
+  t,
+  t1,
+  t2,
+  t3,
   VerElement,
   VerLeaf,
   defaultBlock,
