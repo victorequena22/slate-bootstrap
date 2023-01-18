@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Texto, Props, TextToHTML } from './index'
+import { Texto, Props, TextToHTML } from './Main'
 import { Modal, Button, Row } from 'react-bootstrap'
 import React from 'react'
 export function EditModal(p: Props & { title: string; size?: 'xl' }) {
