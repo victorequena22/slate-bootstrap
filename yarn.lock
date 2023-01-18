@@ -1540,7 +1540,7 @@ combined-stream@^1.0.8:
 
 "component-bootstrap@https://github.com/victorequena22/component-bootstrap.git":
   version "1.0.0"
-  resolved "https://github.com/victorequena22/component-bootstrap.git#cebe48dccc27b40e1963f05593c02c9c533cf0e7"
+  resolved "https://github.com/victorequena22/component-bootstrap.git#b70f691846ac6eda4cae3cc556109d427b98d4af"
 
 compute-scroll-into-view@^1.0.20:
   version "1.0.20"
