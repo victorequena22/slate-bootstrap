@@ -31,32 +31,21 @@
   "author": "Victor Requena",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@types/react-bootstrap": "^0.32.25",
+    "component-bootstrap": "https://github.com/victorequena22/component-bootstrap.git",
+    "eslint": "^8.17.0",
+    "material-ui-color": "^1.2.0",
+    "react": "^18.1.0",
+    "react-bootstrap": "^1.6.0",
     "slate": "^0.72.0",
     "slate-editor": "^5.1.1",
     "slate-history": "^0.66.0",
     "slate-react": "^0.72.1",
-    "@testing-library/react": "^13.3.0",
-    "@types/jest": "^28.1.1",
-    "@types/react": "^18.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
-    "eslint": "^8.17.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "jest": "^28.1.1",
-    "jest-canvas-mock": "^2.4.0",
-    "jest-environment-jsdom": "^28.1.1",
-    "prettier": "^2.6.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "ts-jest": "^28.0.4",
     "typescript": "^4.7.3",
-    "@types/react-bootstrap": "^0.32.25",
-    "material-ui-color": "^1.2.0",
-    "react-bootstrap": "^1.6.0",
-    "utiles": "https://github.com/victorequena22/utiles.git",
-    "component-bootstrap": "https://github.com/victorequena22/component-bootstrap.git"
+    "utiles": "https://github.com/victorequena22/utiles.git"
+  },
+  "dependencies": {
+    "tslib": "^2.4.1"
   }
 }
