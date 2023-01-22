@@ -1,7 +1,7 @@
 import { ButtonGroup } from 'react-bootstrap'
 import { useSlate } from 'slate-react'
 import { Editor, Transforms, Element as SlateElement } from 'slate'
-import { ButtonConfig } from 'component-bootstrap'
+import { ButtonConfig } from '@victorequena22/component-bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import React from 'react'
 interface IProps {

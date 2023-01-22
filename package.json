@@ -1,5 +1,5 @@
 {
-  "name": "slate-bootstrap",
+  "name": "@victorequena22/slate-bootstrap",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/cjs/index.js",
@@ -26,14 +26,14 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run prettier && npm run lint"
+    "prepublishOnly": ""
   },
   "author": "Victor Requena",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.0.12",
     "@types/react-bootstrap": "^0.32.25",
-    "component-bootstrap": "https://github.com/victorequena22/component-bootstrap.git",
+    "@victorequena22/component-bootstrap": "^1.*",
     "eslint": "^8.17.0",
     "react": "^18.1.0",
     "react-bootstrap": "^1.6.0",
@@ -41,7 +41,7 @@
     "slate-history": "^0.66.0",
     "slate-react": "^0.72.1",
     "typescript": "^4.7.3",
-    "utiles": "https://github.com/victorequena22/utiles.git"
+    "@victorequena22/utiles": "^1.*"
   },
   "dependencies": {
     "tslib": "^2.4.1"

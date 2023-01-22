@@ -1,7 +1,7 @@
 import { ButtonGroup, FormControl, InputGroup } from 'react-bootstrap'
 import { Editor } from 'slate'
 import { useSlate } from 'slate-react'
-import { ButtonColor, ButtonConfig, InputNumber } from 'component-bootstrap'
+import { ButtonColor, ButtonConfig, InputNumber } from '@victorequena22/component-bootstrap'
 import { isBlockProps } from './BlockProps'
 import { fontsFamily } from './FontsFamily'
 import React from 'react'
