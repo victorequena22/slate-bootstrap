@@ -24,11 +24,12 @@ export const setTabs = (editor: any, i: number) => setProps(editor, 'tabs', i < 
 export const isBlockProps = (editor: any, prop: string, value: string | number) => {
   const { selection } = editor
   if (!selection) return false
-  const [match] = getMatch(editor, {
+  const [match] = Array.from(getMatch(editor, {
     at: Editor.unhangRange(editor, selection),
     match: (n: any) => !Editor.isEditor(n) && SlateElement.isElement(n) && getProp(n, prop) === value,
-  })
-  return !!match
+  })) as Array<Array<any> | undefined>
+  if (match) console.log(match, match)
+  return match && (match.length > 0)
 }
 //block menus
 export const TabsMenu = ({ left = 2 }: IProps) => {
