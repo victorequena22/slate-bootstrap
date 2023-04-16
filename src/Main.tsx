@@ -14,12 +14,13 @@ import { VerElement, VerLeaf } from './Ver'
 import React from 'react'
 export { EditModal }
 export interface Props {
-  value: BlockElement[]
-  onChange: (value: BlockElement[]) => void
-  id?: string | number
-  error?: string
+  value: BlockElement[];
+  onChange: (value: BlockElement[]) => void;
+  id?: string | number;
+  error?: string;
+  colores?: string[];
 }
-export const Texto = ({ value, onChange, id, error }: Props) => {
+export const Texto = ({ value, onChange, id, colores, error }: Props) => {
   const renderElement = useCallback((props: any) => {
     return <Element {...props} />
   }, [])
@@ -40,8 +41,8 @@ export const Texto = ({ value, onChange, id, error }: Props) => {
     <Slate editor={editor} value={text as any} onChange={setText as any}>
       <Col className='d-flex' xs={12}>
         <MarkMenu />
-        <ColorButton />
-        <BackButton />
+        <ColorButton colores={colores} />
+        <BackButton colores={colores} />
         <AlingMenu />
         <TabsMenu />
         <ListMenu />
