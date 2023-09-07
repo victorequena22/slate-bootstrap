@@ -134,10 +134,10 @@
   resolved "https://registry.yarnpkg.com/@types/warning/-/warning-3.0.0.tgz#0d2501268ad8f9962b740d387c4654f5f8e23e52"
   integrity sha512-t/Tvs5qR47OLOr+4E9ckN8AmP2Tf16gWq+/qA4iUGS/OOyHVO8wv2vjJuX8SNOUTJyWb+2t7wJm6cXILFnOROA==
 
-"@victorequena22/component-bootstrap@^1.*":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@victorequena22/component-bootstrap/-/component-bootstrap-1.0.2.tgz#727165d60efe1f079a06feb5254a952f0d0f7f92"
-  integrity sha512-+sWcu+l45ie0Hw5NH2XD10V8Hj/La2S7wunjuTlFAYbupLlWsuUXp/2zr2JAqro4KOiMIiLKh9Ms6cwl3ToUhw==
+"@victorequena22/component-bootstrap@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@victorequena22/component-bootstrap/-/component-bootstrap-1.0.4.tgz#df2504937fb88d92aed8b3480efb7bc37f432857"
+  integrity sha512-6nPVdod+Fw3FPzjkEkz7Da26gtzGg/8GbJoCsunQ6DXXWysihjh8DLKGMvrxRGRJJMVf4hnmLrx0WN2Ci+JAFQ==
 
 "@victorequena22/utiles@^1.*":
   version "1.0.2"
