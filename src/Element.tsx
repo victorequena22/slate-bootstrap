@@ -18,18 +18,19 @@ const Block = ({ attributes, children, element }: any) => {
   }
 }
 const List = (p: any) => {
-  const { attributes, children, element } = p
+  const { attributes, children, element, } = p
   return <Block attributes={attributes} element={element}>{children}</Block>
 }
 
-const getCSS = ({ align, tabs, type, list }: BlockElement): CSSProperties => {
+const getCSS = ({ align, tabs, type, list, children }: BlockElement): CSSProperties => {
   const font = getFontSize(type) / 10
   const t2 = tabs * 2
   const t = list === 'paragraph' ? t2 : t2 + font
   const s = list === 'paragraph' ? {} : { display: 'list-item', listStyleType: list === 'bulleted-list' ? 'disc' : 'square' }
+  const color = children[0] ? children[0].color : '#000';
   return {
     float: 'right', textAlign: align, padding: '0 0 0 0', fontSize: `${font}rem`, minHeight: `${font}rem`,
-    width: `calc(100% - ${t + 0.1}rem)`, margin: '.05rem .05rem .05rem .05rem', ...s,
+    width: `calc(100% - ${t + 0.1}rem)`, margin: '.05rem .05rem .05rem .05rem', ...s, color
   }
 }
 const getFontSize = (type: BockType) => {

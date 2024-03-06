@@ -29,7 +29,7 @@ export const VerLeaf = ({ leaf }: { leaf: Child }) => {
   }
   return <span style={style} dangerouslySetInnerHTML={{ __html: text.replaceAll('¤', '"') }} />
 }
-const getCSS = ({ align, tabs, type, list }: BlockElement): CSSProperties => {
+const getCSS = ({ align, tabs, type, list, children }: BlockElement): CSSProperties => {
   const font = getFontSize(type) / 10
   const t2 = tabs * 2
   const t = list === 'paragraph' ? t2 : t2 + font
@@ -37,9 +37,10 @@ const getCSS = ({ align, tabs, type, list }: BlockElement): CSSProperties => {
     list === 'paragraph'
       ? {}
       : {
-          display: 'list-item',
-          listStyleType: list === 'bulleted-list' ? 'disc' : 'square',
-        }
+        display: 'list-item',
+        listStyleType: list === 'bulleted-list' ? 'disc' : 'square',
+      }
+  const color = children[0] ? children[0].color : '#000';
   return {
     float: 'right',
     textAlign: align,
@@ -48,7 +49,7 @@ const getCSS = ({ align, tabs, type, list }: BlockElement): CSSProperties => {
     minHeight: `${font}rem`,
     width: `calc(100% - ${t + 0.1}rem)`,
     margin: '.05rem .05rem .05rem .05rem',
-    ...s,
+    ...s, color
   }
 }
 const getFontSize = (type: BockType) => {
