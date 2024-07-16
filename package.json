@@ -1,6 +1,6 @@
 {
   "name": "@victorequena22/slate-bootstrap",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -26,6 +26,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build",
+    "publish": "npm publish --access=public",
     "prepublishOnly": ""
   },
   "author": "Victor Requena",

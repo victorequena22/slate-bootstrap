@@ -6,7 +6,7 @@ import { isBlockProps } from './BlockProps'
 import { fontsFamily } from './FontsFamily'
 import React from 'react'
 interface IProps {
-  left?: number
+  left?: number | string
 }
 export const toggleMark = (editor: any, format: any) => {
   const isActive = isMarkActive(editor, format)
