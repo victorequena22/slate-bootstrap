@@ -73,20 +73,24 @@ const getFontUsa = (type: BockType, children?: Child) => {
   if (c) return c < b ? b : c;
   return b;
 }
-
-const ListElement = ({ element, children }: { element: BlockElement, children: any }) => {
-  const { list } = element;
-  return list === 'paragraph' ? <>{children}</> : <div style={getCSSList(element)}>
-    {children}
-  </div>
+const ListElement = ({ element, children }: { element: any, children: any }) => {
+    const { list } = element;
+    return list === 'paragraph' ? <div style={getCSSNoList(element)}>{children}</div> : <div style={getCSSList(element)}>
+        {children}
+    </div>
 }
 
-const getCSSList = ({ tabs, type, list, children, align }: BlockElement): CSSProperties => {
-  const font = getFontUsa(type, children[0]) / 10;
-  const t2 = tabs * 2;
-  const t = list === 'paragraph' ? t2 : t2 + font
-  const s = list === 'paragraph' ? {} : { display: 'list-item', listStyleType: list === 'bulleted-list' ? 'disc' : 'square' }
-  return {
-    padding: '0 0 0 0', width: `fit-content`, ...s, marginLeft: `${t}rem`, textAlign: align
-  }
+const getCSSList = ({ tabs, type, list, children, align }: any): CSSProperties => {
+    const font = getFontUsa(type, children[0]) / 10;
+    const t2 = tabs * 2;
+    const t = list === 'paragraph' ? t2 : t2 + font
+    const s = list === 'paragraph' ? {} : { display: 'list-item', listStyleType: list === 'bulleted-list' ? 'disc' : 'square' }
+    return {
+        padding: '0 0 0 0', width: `fit-content`, ...s, marginLeft: `${t}rem`, textAlign: align
+    }
+}
+const getCSSNoList = ({ align }: any): CSSProperties => {
+    return {
+        padding: '0 0 0 0', width: `fit-content`, textAlign: align
+    }
 }
