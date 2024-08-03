@@ -20,7 +20,15 @@ export const isBlockProps = (editor: any, prop: string, value: string | number) 
   const [match] = Array.from(getMatch(editor, {
     at: Editor.unhangRange(editor, selection),
     match: (n: any) => !Editor.isEditor(n) && SlateElement.isElement(n) && getProp(n, prop) === value,
-  })) as Array<Array<any> | undefined>
-  if (match) console.log(match, match)
+  })) as Array<Array<any> | undefined>;
   return match && (match.length > 0)
+}
+export const getBlockProps = (editor: any, prop: string) => {
+  const { selection } = editor
+  if (!selection) return false
+  const a = Array.from(getMatch(editor, {
+      at: Editor.unhangRange(editor, selection),
+      match: (n: any) => !Editor.isEditor(n) && SlateElement.isElement(n) && getProp(n, prop),
+  })) as Array<Array<any> | undefined>
+  return a[0] ? a[0][0][prop] ? a[0][0][prop] : '' : '';
 }

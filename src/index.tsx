@@ -7,6 +7,6 @@ import { ColorButton, BackButton, FontSize, FontsFamily, toggleMark, FontStyle, 
 import { hotKeysValue } from './HotKeys'
 import { VerElement, VerLeaf } from './Ver'
 import { Props, Texto, TextToHTML } from './Main'
-import { getMatch, getProp, getTabs, isBlockProps, setProps, setPropsOrRemove, setTabs } from './BlockUtils'
+import { getBlockProps, getMatch, getProp, getTabs, isBlockProps, setProps, setPropsOrRemove, setTabs } from './BlockUtils'
 export type { BlockElement, Props as slateProps }
-export { getMatch, getProp, setProps, setPropsOrRemove, getTabs, isBlockProps, setTabs, MarkButton, BockType, Align, List, Tabs, characters, defaulHtml, defaultChild, getHTML, getTextFormat, Child, t, t1, t2, t3, VerElement, VerLeaf, defaultBlock, hotKeysValue, Texto, TextToHTML, getText, setText, Element, Leaf, AlingMenu, ListMenu, TabsMenu, TypeMenu, ColorButton, FontStyle, MarkMenu, BackButton, FontSize, FontsFamily, toggleMark, EditModal, }
+export { getBlockProps, getMatch, getProp, setProps, setPropsOrRemove, getTabs, isBlockProps, setTabs, MarkButton, BockType, Align, List, Tabs, characters, defaulHtml, defaultChild, getHTML, getTextFormat, Child, t, t1, t2, t3, VerElement, VerLeaf, defaultBlock, hotKeysValue, Texto, TextToHTML, getText, setText, Element, Leaf, AlingMenu, ListMenu, TabsMenu, TypeMenu, ColorButton, FontStyle, MarkMenu, BackButton, FontSize, FontsFamily, toggleMark, EditModal, }

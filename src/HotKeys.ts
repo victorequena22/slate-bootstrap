@@ -1,6 +1,6 @@
 import isHotkey from 'is-hotkey'
-import { getTabs, setTabs } from './BlockProps'
 import { toggleMark } from './MarkProps'
+import { getTabs, setTabs } from './BlockUtils'
 
 type hkeyM = 'ctrl+b' | 'ctrl+i' | 'ctrl+u'
 type hkeyE = 'tab' | 'shift+tab'
