@@ -1,5 +1,7 @@
 import { Editor, Transforms, Element as SlateElement } from 'slate'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { useSlate } from 'slate-react'
+import { useCallback } from 'react'
 export const getProp = (n: any, prop: string) => n[prop]
 export const setProps = (editor: any, prop: string, value: string | number) =>
   Transforms.setNodes<SlateElement>(editor, { [prop]: value } as any)
@@ -27,8 +29,15 @@ export const getBlockProps = (editor: any, prop: string) => {
   const { selection } = editor
   if (!selection) return false
   const a = Array.from(getMatch(editor, {
-      at: Editor.unhangRange(editor, selection),
-      match: (n: any) => !Editor.isEditor(n) && SlateElement.isElement(n) && getProp(n, prop),
+    at: Editor.unhangRange(editor, selection),
+    match: (n: any) => !Editor.isEditor(n) && SlateElement.isElement(n) && getProp(n, prop),
   })) as Array<Array<any> | undefined>
-  return a[0] ? a[0][0][prop] ? a[0][0][prop] : '' : '';
+  if (a === undefined || a.length === 0 || a[0] === undefined || a[0].length === 0) return '';
+  return a[0][0][prop];
+}
+export const useBlockProps = (props: string) => {
+  const editor = useSlate()
+  const v = getBlockProps(editor, props);
+  const c = useCallback((s: any) => setProps(editor, props, s), [])
+  return [c, v];
 }
