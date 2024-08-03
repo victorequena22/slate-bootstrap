@@ -38,6 +38,6 @@ export const getBlockProps = (editor: any, prop: string) => {
 export const useBlockProps = (props: string) => {
   const editor = useSlate()
   const v = getBlockProps(editor, props);
-  const c = useCallback((s: any) => setProps(editor, props, s), [])
-  return [c, v];
+  const s = useCallback((s: any) => setProps(editor, props, s), [])
+  return [v, s];
 }
