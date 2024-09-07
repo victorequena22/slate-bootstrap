@@ -3,7 +3,7 @@ import { Editor } from 'slate'
 import { useSlate } from 'slate-react'
 import { ButtonColor, ButtonConfig, InputNumber } from '@victorequena22/component-bootstrap'
 import { fontsFamily } from './FontsFamily'
-import React from 'react'
+import React, { useCallback } from 'react'
 import { isBlockProps } from './BlockUtils'
 interface IProps {
   left?: number | string
@@ -15,6 +15,15 @@ export const toggleMark = (editor: any, format: any) => {
   } else {
     Editor.addMark(editor, format, true)
   }
+}
+export const useMarkProp = (mark: string, def: string | number) => {
+  const editor = useSlate()
+  const marks: any = Editor.marks(editor)
+  const is = marks !== null && marks[mark] !== undefined
+  const value = is ? marks[mark] : def;
+  const set = useCallback((value: any) => Editor.addMark(editor, mark, value), [editor, mark])
+  const click = useCallback(() => Editor.addMark(editor, mark, is ? def : value), [editor, is, mark, def, value])
+  return [value, set, click];
 }
 const getFontSize = (editor: any) => {
   if (isBlockProps(editor, 'type', 'heading-one')) return 26
@@ -68,21 +77,19 @@ export const BackButton = ({ left = 2, colores }: ColorProps) => {
   const is = marks !== null && marks.backgroundColor !== undefined
   const color = is ? marks.backgroundColor : '#00000000'
   const style = { width: 32, height: 24, margin: '0 0 0 0', padding: '.25rem .5rem .25rem .5rem' }
-  return (
-    <ButtonColor
-      colores={colores}
-      className={`ml-${left}`}
-      tip='RESALTAR TEXTO'
-      style={style}
-      color={color}
-      setData={(backgroundColor) => Editor.addMark(editor, 'backgroundColor', backgroundColor)}
-      click={() =>
-        is ? Editor.addMark(editor, 'backgroundColor', '#00000000') : Editor.addMark(editor, 'backgroundColor', color)
-      }
-    >
-      <i className='fas fa-paint-roller'></i>
-    </ButtonColor>
-  )
+  return <ButtonColor    colores={colores}
+    className={`ml-${left}`}
+    tip='RESALTAR TEXTO'
+    style={style}
+    color={color}
+    setData={(backgroundColor) => Editor.addMark(editor, 'backgroundColor', backgroundColor)}
+    click={() =>
+      is ? Editor.addMark(editor, 'backgroundColor', '#00000000') : Editor.addMark(editor, 'backgroundColor', color)
+    }
+  >
+    <i className='fas fa-paint-roller'></i>
+  </ButtonColor>
+
 }
 export const FontsFamily = () => {
   const editor = useSlate()

@@ -41,3 +41,9 @@ export const useBlockProps = (props: string) => {
   const s = useCallback((s: any) => setProps(editor, props, s), [])
   return [v, s];
 }
+export const useIsBlockProps = (props: string) => {
+  const editor = useSlate()
+  const val = useCallback((e: string) => isBlockProps(editor, props, e), [editor]);
+  const set = useCallback((e: string) => setPropsOrRemove(editor, props, e), [editor]);
+  return [val, set] as [(s: string) => boolean, (s: string) => void];
+}

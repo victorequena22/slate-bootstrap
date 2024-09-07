@@ -39,32 +39,7 @@ export function getHTML(id?: string | number) {
   if (div !== null) return div.innerHTML.replaceAll(t, '').replaceAll(t1, '').replaceAll(t2, '').replaceAll(t3, '')
   return ''
 }
-
-export const getText = (text: BlockElement[]) =>
-  text.map((b) => {
-    return {
-      ...b,
-      children: b.children.map((c) => {
-        return {
-          ...c,
-          text: c.text.replaceAll('"', '¤'),
-        }
-      }),
-    }
-  })
-
-export const setText = (text: BlockElement[]) =>
-  text.map((b) => {
-    return {
-      ...b,
-      children: b.children.map((c) => {
-        return {
-          ...c,
-          text: c.text.replaceAll('¤', '"'),
-        }
-      }),
-    }
-  })
-
-export const getTextFormat = (text: BlockElement[]) =>
-  text.map(({ children }) => children.map((c) => c.text).join('')).join('')
+type BlockElementFun = (text: BlockElement[]) => BlockElement[];
+export const getText: BlockElementFun = (text) => text.map((b) => ({ ...b, children: b.children.map((c) => ({ ...c, text: c.text.replaceAll('"', '¤') })) }))
+export const setText: BlockElementFun = (text) => text.map((b) => ({ ...b, children: b.children.map((c) => ({ ...c, text: c.text.replaceAll('¤', '"') })) }))
+export const getTextFormat = (text: BlockElement[]) => text.map(({ children }) => children.map((c) => c.text).join("\n")).join("\n")
