@@ -1,7 +1,6 @@
 import { ButtonGroup } from 'react-bootstrap'
 import { useSlate } from 'slate-react'
 import { ButtonConfig } from '@victorequena22/component-bootstrap'
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import React from 'react'
 import { getTabs, setTabs, useIsBlockProps } from './BlockUtils'
 interface IProps {
