@@ -1,7 +1,6 @@
-import { Editor, Transforms, Element as SlateElement } from 'slate'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import { useSlate } from 'slate-react'
-import { useCallback } from 'react'
+import { Editor, Transforms, Element as SlateElement } from 'slate';
+import { useSlate } from 'slate-react';
+import { useCallback } from 'react';
 export const getProp = (n: any, prop: string) => n[prop]
 export const setProps = (editor: any, prop: string, value: string | number) =>
   Transforms.setNodes<SlateElement>(editor, { [prop]: value } as any)
